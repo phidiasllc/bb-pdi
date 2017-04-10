@@ -1,6 +1,7 @@
 #ifndef GPIO_HH
 #define GPIO_HH
 
+#define usleep(x) do {} while(0)
 // Includes. {{{
 #include <unistd.h>
 #include <stdint.h>
@@ -191,4 +192,5 @@ int read(int pin, int time = 0) {
 	return GET(pin);
 }
 
+#undef usleep
 #endif
