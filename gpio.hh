@@ -1,7 +1,6 @@
 #ifndef GPIO_HH
 #define GPIO_HH
 
-#define usleep(x) do {} while(0)
 // Includes. {{{
 #include <unistd.h>
 #include <stdint.h>
@@ -173,24 +172,23 @@ void init_gpio() {
 void set(int pin, int time = 0) {
 	SET_OUTPUT(pin);
 	SET(pin);
-	usleep(time);
+	(void)&time;//usleep(time);
 }
 
 void reset(int pin, int time = 0) {
 	SET_OUTPUT(pin);
 	RESET(pin);
-	usleep(time);
+	(void)&time;//usleep(time);
 }
 
 void input(int pin, int time = 0) {
 	SET_INPUT(pin);
-	usleep(time);
+	(void)&time;//usleep(time);
 }
 
 int read(int pin, int time = 0) {
-	usleep(time);
+	(void)&time;//usleep(time);
 	return GET(pin);
 }
 
-#undef usleep
 #endif
