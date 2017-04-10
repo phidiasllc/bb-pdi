@@ -172,22 +172,22 @@ void init_gpio() {
 void set(int pin, int time = 0) {
 	SET_OUTPUT(pin);
 	SET(pin);
-	(void)&time;//usleep(time);
+	usleep(time);
 }
 
 void reset(int pin, int time = 0) {
 	SET_OUTPUT(pin);
 	RESET(pin);
-	(void)&time;//usleep(time);
+	usleep(time);
 }
 
 void input(int pin, int time = 0) {
 	SET_INPUT(pin);
-	(void)&time;//usleep(time);
+	usleep(time);
 }
 
 int read(int pin, int time = 0) {
-	(void)&time;//usleep(time);
+	usleep(time);
 	return GET(pin);
 }
 

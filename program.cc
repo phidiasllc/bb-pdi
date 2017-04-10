@@ -26,7 +26,7 @@
    The time argument is a delay after setting the new state before returning, or before reading.  This time is measured in microseconds.
 */
 
-int const CLOCK_TIME = 1e6 / 50e3;	// A full cycle is four times this period, so the minimum of 10kHz is 40e3.
+int const CLOCK_TIME = 1e6 / 500e3;	// A full cycle is four times this period, so the minimum of 10kHz is 40e3.
 int const DATA_DELAY = CLOCK_TIME;
 
 uint64_t key = 0x1289AB45CDD888FF;
