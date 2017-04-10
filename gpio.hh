@@ -93,8 +93,10 @@ int bbb_hack_pipe[2];
 // Pin setting. {{{
 static void bbb_setmux(int pin, BBB_State mode) { // {{{
 	if (bbb_muxname[pin][0] == '\0') {
-		if (mode != MUX_DISABLED)
+		if (mode != MUX_DISABLED) {
 			std::cerr << "trying to set up unusable gpio " << pin << std::endl;
+			abort();
+		}
 		return;
 	}
 	int modes[3] = { 0x1f, 0x37, 0x1f };
