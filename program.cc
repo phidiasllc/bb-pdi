@@ -2,8 +2,8 @@
 #include <stdint.h>
 
 // Pin definitions.
-#define CLK 125
-#define DATA 123
+#define CLK 115
+#define DATA 113
 
 // Protocol definitions.
 #define LDS	0x00
