@@ -2,8 +2,8 @@
 #include <stdint.h>
 
 // Pin definitions.
-#define CLK 1
-#define DATA 2
+#define CLK 125
+#define DATA 123
 
 // Protocol definitions.
 #define LDS	0x00
@@ -66,6 +66,7 @@ void send_frame(int data) {
 }
 
 int recv_frame() {
+	input(DATA);
 	while (true) {
 		bool bit = read(DATA, DATA_DELAY);
 		pulse();
